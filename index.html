@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Store Form</title>
+    <title>Student Admission Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,7 +26,7 @@
             display: block;
             margin: 10px 0 5px;
         }
-        input[type="text"], input[type="email"], input[type="number"], textarea {
+        input[type="text"], input[type="email"], input[type="date"], select, textarea {
             width: 100%;
             padding: 8px;
             margin: 5px 0 10px 0;
@@ -52,10 +52,13 @@
 <body>
 
 <div class="container">
-    <h2>Medical Store Form</h2>
+    <h2>Student Admission Form</h2>
     <form action="/submit_form" method="post">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required>
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
 
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
@@ -63,11 +66,16 @@
         <label for="phone">Phone Number</label>
         <input type="text" id="phone" name="phone" required>
 
-        <label for="medication">Medication</label>
-        <textarea id="medication" name="medication" rows="4" required></textarea>
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
 
-        <label for="quantity">Quantity</label>
-        <input type="number" id="quantity" name="quantity" required>
+        <label for="course">Course</label>
+        <select id="course" name="course" required>
+            <option value="engineering">Engineering</option>
+            <option value="medicine">Medicine</option>
+            <option value="arts">Arts</option>
+            <option value="science">Science</option>
+        </select>
 
         <input type="submit" value="Submit">
     </form>
